@@ -1,0 +1,101 @@
+serial pinout (headers already soldered):
+1 on modem is 3.3 live, don't use it
+next pin goes to -> RX of dongle
+X2 -> TX of dongle
+next pin GND -> GND
+
+speed port setting 115200 (change from device manager)
+
+chipset: zte zx279110a1
+
+secret word: zxic
+
+
+
+dbinfo command
+
+arch_number = 0x000002F6
+boot_params = 0x40000100
+DRAM bank   = 0x00000000
+-> start    = 0x40000000
+-> size     = 0x04000000
+eth0name    = eth0
+ethaddr     = 
+current eth = eth0
+ip_addr     = 192.168.1.1
+baudrate    = 115200 bps
+TLB addr    = 0x43FF0000
+relocaddr   = 0x43FC5000
+reloc off   = 0x001C5000
+irq_sp      = 0x437C4F38
+sp start    = 0x437B4F28
+
+
+version:
+U-Boot 2013.04 (Jul 21 2015 - 09:37:13)
+arm-linux-uclibc-gcc (GCC) 4.1.2 2011-06-24 ZTE Embsys-TSP V2.08.20_P2
+GNU ld (GNU Binutils) 2.18
+
+
+printenv:
+
+baudrate=115200
+bootcmd=setenv bootargs console=$(console) rdinit=/sbin/init;bootm 0x41000100;
+bootdelay=2
+bootfile=uboot.bin
+bootsize=262144
+console=ttyS0,115200n8
+ethact=eth0
+flashsize=16777216
+fullfile=upgrade.bin
+ipaddr=192.168.1.1
+kernelsize=7340032
+linuzfile=vmlinuz.bin
+memsize=64M
+netretry=5
+serverip=192.168.1.100
+stderr=serial
+stdin=serial
+stdout=serial
+ver=U-Boot 2013.04 (Jul 21 2015 - 09:37:13)
+versioninfo=U-Boot V6.0.1P1T5 20150721094541 0x780000 0x1 0x82 0x87
+
+
+
+help:
+
+=> help
+?       - alias for 'help'
+base    - print or set address offset
+bdinfo  - print Board Info structure
+bootk   - boot kernel
+bootm   - boot application image from memory
+bootp   - boot image via network using BOOTP/TFTP protocol
+clk     - clock set
+cmp     - memory compare
+cp      - memory copy
+downver - upgrade software downloaded from TFTP server
+fr      - fpga read
+fw      - fpga write
+go      - start application at address 'addr'
+help    - print command description/usage
+i2c     - I2C sub-system
+loop    - infinite loop on address range
+md      - memory display
+mii     - MII utility commands
+mm      - memory modify (auto-incrementing address)
+mt      - memory test
+mw      - memory write (fill)
+nm      - memory modify (constant address)
+ping    - send ICMP ECHO_REQUEST to network host
+printenv- print environment variables
+reset   - Perform RESET of the CPU
+run     - run commands in an environment variable
+saveenv - save environment variables to persistent storage
+setenv  - set environment variables
+sf      - SPI flash sub-system
+tftp    - boot image via network using TFTP protocol
+tftpput - TFTP put command, for uploading files to a server
+version - print monitor, compiler and linker version
+watchdog- watchdog reset && disable
+xmodem  - xmodem

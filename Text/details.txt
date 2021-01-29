@@ -1,0 +1,27 @@
+
+
+ can set BRIDGE using html in router network page, by duplicating changing value to route to BRIDGE (see javascript code, what it wants
+ )
+ 
+  vlan id 128 for internet
+  
+  good cat5 cable connector at epon, 
+  connecting epon in pc:
+  In Lan adapter ipv4 Properties , set
+  IP address : 192.168.1.5(anything would work fine)
+  subnet (auto populated)
+  Default gateway: 192.168.1.1 (the lan ip/user interface ip of epon)
+  
+  
+  connecting epon through router:
+  set epon lan ip to 192.168.1.3 to avoid conflicing
+  connect the cable from epon to router lan and router lan to pc, reboot all devices and you will be able to aceess epon at 192.168.1.3
+  
+  voice:
+  vlan id 1830 for voice,
+  
+  
+  modem is zte chipset
+  I assume , the modem works on bridge mode on default settings, based on documentation
+  
+  zte f401 clone (or maybe not, but chipset is ZX279110A1)

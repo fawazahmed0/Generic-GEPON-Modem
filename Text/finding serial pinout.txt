@@ -1,0 +1,3 @@
+refer: https://openwrt.org/docs/techref/hardware/port.serial
+
+have to use mutlimeter to know the live pin and gnd etc, just refer the guide to know more

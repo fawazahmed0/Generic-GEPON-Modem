@@ -1,0 +1,829 @@
+
+BOOT MODE: SPI
+ddr init
+
+U-Boot 2013.04 (Jul 21 2015 - 09:37:13)
+
+CPU:   FA626TE 266 MHz
+AHB:   133 MHz
+APB:   66 MHz
+I2C:   ready
+DRAM:  64 MiB
+MMU:   on
+ftspi020: id=c22018.c220
+ftspi020: mx25l12805d (16 MB)
+In:    serial
+Out:   serial
+Err:   serial
+FCS: speed change finished 320000
+Net:   eth0
+
+Hit 1 to upgrade softwate version
+Hit any key to stop autoboot:  0
+=> f
+Unknown command 'f' - try 'help'
+=> help
+?       - alias for 'help'
+base    - print or set address offset
+bdinfo  - print Board Info structure
+bootk   - boot kernel
+bootm   - boot application image from memory
+bootp   - boot image via network using BOOTP/TFTP protocol
+clk     - clock set
+cmp     - memory compare
+cp      - memory copy
+downver - upgrade software downloaded from TFTP server
+fr      - fpga read
+fw      - fpga write
+go      - start application at address 'addr'
+help    - print command description/usage
+i2c     - I2C sub-system
+loop    - infinite loop on address range
+md      - memory display
+mii     - MII utility commands
+mm      - memory modify (auto-incrementing address)
+mt      - memory test
+mw      - memory write (fill)
+nm      - memory modify (constant address)
+ping    - send ICMP ECHO_REQUEST to network host
+printenv- print environment variables
+reset   - Perform RESET of the CPU
+run     - run commands in an environment variable
+saveenv - save environment variables to persistent storage
+setenv  - set environment variables
+sf      - SPI flash sub-system
+tftp    - boot image via network using TFTP protocol
+tftpput - TFTP put command, for uploading files to a server
+version - print monitor, compiler and linker version
+watchdog- watchdog reset && disable
+xmodem  - xmodem
+=> bdinfo
+arch_number = 0x000002F6
+boot_params = 0x40000100
+DRAM bank   = 0x00000000
+-> start    = 0x40000000
+-> size     = 0x04000000
+eth0name    = eth0
+ethaddr     = 
+current eth = eth0
+ip_addr     = 192.168.1.1
+baudrate    = 115200 bps
+TLB addr    = 0x43FF0000
+relocaddr   = 0x43FC5000
+reloc off   = 0x001C5000
+irq_sp      = 0x437C4F38
+sp start    = 0x437B4F28
+=> printenv
+baudrate=115200
+bootcmd=setenv bootargs console=$(console) rdinit=/sbin/init;bootm 0x41000100;
+bootdelay=2
+bootfile=uboot.bin
+bootsize=262144
+console=ttyS0,115200n8
+ethact=eth0
+ethaddr=
+flashsize=16777216
+fullfile=upgrade.bin
+ipaddr=192.168.1.1
+kernelsize=7340032
+linuzfile=vmlinuz.bin
+memsize=64M
+netretry=5
+serverip=192.168.1.100
+stderr=serial
+stdin=serial
+stdout=serial
+ver=U-Boot 2013.04 (Jul 21 2015 - 09:37:13)
+versioninfo=U-Boot V6.0.1P1T5 20150721094541 0x780000 0x1 0x82 0x87
+
+Environment size: 545/65532 bytes
+=>
+BOOT MODE: SPI
+ddr init
+
+U-Boot 2013.04 (Jul 21 2015 - 09:37:13)
+
+CPU:   FA626TE 266 MHz
+AHB:   133 MHz
+APB:   66 MHz
+I2C:   ready
+DRAM:  64 MiB
+MMU:   on
+ftspi020: id=c22018.c220
+ftspi020: mx25l12805d (16 MB)
+In:    serial
+Out:   serial
+Err:   serial
+FCS: speed change finished 320000
+Net:   eth0
+
+Hit 1 to upgrade softwate version
+Hit any key to stop autoboot:  0
+select=0x1
+BootImageNum=0x00000001,1
+select=0x1
+search=0x2
+read spi flash offset=0x780000, size=0x3df8a0,please waiting...down.
+## Booting kernel from Legacy Image at 41000100 ...
+   Image Name:   Linux Kernel Image
+   Image Type:   ARM Linux Kernel Image (lzma compressed)
+   Data Size:    4061010 Bytes = 3.9 MiB
+   Load Address: 40008000
+   Entry Point:  40008000
+   Verifying Checksum ... OK
+   Uncompressing Kernel Image ... OK
+----------------------
+|-->setup versioninfo tag...
+
+Starting kernel ...
+
+Linux version 2.6.32.7-EMBSYS-CGEL-4.01.10.P0.F0 (root@ubun14) (gcc version 4.1.2 2011-06-24 ZTE Embsys-TSP V2.08.20_P2) #17 Fri Sep 18 02:22:57 EDT 2020
+CPU: FA626TE [66056263] revision 3 (ARMv5TE), cr=0000397f
+CPU: VIPT aliasing data cache, VIPT aliasing instruction cache
+Machine: SFU
+Memory policy: ECC disabled, Data cache writeback
+Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 16256
+Kernel command line: console=ttyS0,115200n8 rdinit=/sbin/init
+PID hash table entries: 256 (order: -2, 1024 bytes)
+Dentry cache hash table entries: 8192 (order: 3, 32768 bytes)
+Inode-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Memory: 64MB = 64MB total
+Memory: 26568KB available (3255K code, 283K data, 11208K init, 0K highmem)
+SLUB: Genslabs=11, HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+Experimental hierarchical RCU implementation.
+Experimental hierarchical RCU init done.
+NR_IRQS:96
+ftintc030: GIC mode
+ftintc030: cpu_nr=1, spi_nr=48, sgi_nr=0, ppi_nr=0
+CPU: 133 MHz, HCLK: 133 MHz, PCLK: 66 MHz
+Console: colour dummy device 80x30
+Calibrating delay loop... 530.84 BogoMIPS (lpj=2654208)
+Mount-cache hash table entries: 512
+CPU: Testing write buffer coherency: ok
+NET: Registered protocol family 16
+11930:27:43 [Klogctl][Info] [(951)LogCtlInit] LogCtlInit begin
+11930:27:43 [Klogctl][Info] [(796)AddLogOutModule] AddLogOutModule:OutputMode=0X00000200,ptLogProcSet=c2423a98
+11930:27:43 [Klogstdio][Info] [(863)LogStdioProcInit] LogStdioProcInit
+
+LogUdpWatchProcInit
+<pdt_wdt_init>(485):creat proc files for watchdog!!!
+<pdt_wdt_init>(489):Starting Watchdog Timer...
+ftwdt010: heartbeat 2 msec, clock 66500000
+Serial: 8250/16550 driver, 2 ports, IRQ sharing disabled
+serial8250.0: ttyS0 at MMIO 0x90400000 (irq = 43) is a 16550A
+console [ttyS0] enabled
+serial8250.0: ttyS1 at MMIO 0x90500000 (irq = 44) is a 16550A
+bio: create slab <bio-0> at 0
+vgaarb: loaded
+Switching to clocksource fttmr010_clksrc
+NET: Registered protocol family 2
+IP route cache hash table entries: 1024 (order: 0, 4096 bytes)
+TCP established hash table entries: 2048 (order: 2, 16384 bytes)
+TCP bind hash table entries: 2048 (order: 1, 8192 bytes)
+TCP: Hash tables configured (established 2048 bind 2048)
+TCP: reno registered
+UDP hash table entries: 256 (order: 0, 4096 bytes)
+UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+NET: Registered protocol family 1
+i2c irq mode...
+fti2c010 fti2c010.0: i2c bus ready.
+fti2c010 fti2c010.0: speed=199101Hz
+pon init
+pp init
+pp net init ok,248/184
+switch init
+switch ram init timeout,0x1fffffff
+JFFS2 version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+msgmni has been set to 52
+io scheduler noop registered
+io scheduler cfq registered (default)
+brd: module loaded
+loop: module loaded
+nf_conntrack version 0.5.0 (416 buckets, 1664 max)
+ip_tables: (C) 2000-2006 Netfilter Core Team
+NET: Registered protocol family 10
+ip6_tables: (C) 2000-2006 Netfilter Core Team
+IPv6 over IPv4 tunneling driver
+NET: Registered protocol family 17
+Bridge firewalling registered
+Ebtables v2.0 registered
+PPP generic driver version 2.4.2
+NET: Registered protocol family 24
+systools version:v0.7.0
+ftspi020: JEDEC id c22018.c220
+ftspi020: using 'mx25l12805d': sz_sect=64KB, nr_sect=256
+ftspi020: mx25l12805d (16384 Kbytes)
+ftspi020: mtd.name = ftspi020, .size = 0x1000000 (16MiB) .erasesize = 0x00010000 (64KiB) .numeraseregions = 0
+Creating 7 MTD partitions on "ftspi020":
+0x000000000000-0x000001000000 : "whole flash"
+0x000000000000-0x000000080000 : "uboot"
+0x000000080000-0x000000780000 : "kernel0"
+0x000000780000-0x000000e80000 : "kernel1"
+0x000000e80000-0x000000e90000 : "others"
+0x000000e90000-0x000000ea0000 : "parameter tags"
+0x000000ea0000-0x000001000000 : "usercfg"
+fastforward_init start !
+fastforward_init done !
+Freeing init memory: 11208K
+CFS CPU scheduler.
+init started:  BusyBox v1.01 (2020.09.17-16:04+0000) multi-call binary
+Starting pid 28, console /dev/ttyS0: '/etc/init.d/rcS'
+Pre-initialization script ...
+  Mounting ramdisk at /var
+  Mounting /dev/mtdblock6 to /userconfig
+  Mount ok!
+Bringing up interface lo
+Bringing up interface mii0
+11930:27:45 [U_busybox][Warn] [ifconfig.c(996)ifconfig] Ioctl failed!SIOCGIFFLAGS
+Set promisc for device mii0
+11930:27:45 [U_busybox][Warn] [ifconfig.c(996)ifconfig] Ioctl failed!SIOCGIFFLAGS
+ Configuring with no IP address (i.e. for PPP)
+11930:27:46 [U_busybox][Warn] [ifconfig.c(996)ifconfig] Ioctl failed!SIOCGIFFLAGS
+Using /kmodule/bspdriver.ko
+<verinfo_module_init>(661)---->verinfo=U-Boot V6.0.1P1T5 20150721094541 0x780000 0x1 0x82 0x87
+<verinfo_module_init>(666)----><verinfo_module_init>(668)----><verinfo_module_init>(670)---->GN25L95          found.
+Using /kmodule/zx_ponreg.ko
+register fpga driver success, major=222
+Using /kmodule/tagparam_mod.ko
+Using /kmodule/tm.ko
+= TM Module SYS FS Init ended successfully =
+tm_initModule begin...
+tm_initial successed !!!
+tm_initModule end...
+Using /kmodule/netdriver.ko
+ethdriver_init....
+g_mii_dev_name[0]  sw
+g_mii_dev_name[1]  pon
+Using /kmodule/switch.ko
+Init switch module
+zy switch detected boardtype:2
+zy uni num:1
+switch config 9100 EPON SFU mode!
+tm_tpid_select_set fail, error p_port 2
+[TM][tm_tpid_select_set] set failed!p_port=2, tp_id=0, select=0
+si_zx_api_sw_global_init fails!!!!
+[TM][sbrg_set_isolate_pt_cfg]input invalid parameter!
+tm_port_isolate_set fail
+[si_api_sw_port_set_port_isolatemask] L1064 tm sdk failed!
+si_zx_api_sw_port_init fails!!!!
+[TM][tm_port_cvrt_protocol_pktdeal_set] error protocol type 11
+[TM][tm_port_cvrt_protocol_pktdeal_set] error protocol type 11
+[TM][tm_port_protocol_pktdeal_set] failed
+[TM][tm_port_cvrt_protocol_pktdeal_set] error protocol type 17
+[TM][tm_port_cvrt_protocol_pktdeal_set] error protocol type 17
+[TM][tm_port_protocol_pktdeal_set] failed
+[TM][tm_pon_cvrt_protocol_pktdeal_set] error protocol type 17
+[TM][dpa_set_protocol_type_i_act] failed
+[TM][tm_port_cvrt_protocol_pktdeal_set] error protocol type 21
+[TM][tm_port_cvrt_protocol_pktdeal_set] error protocol type 21
+[TM][tm_port_protocol_pktdeal_set] failed
+[TM][tm_pon_cvrt_protocol_pktdeal_set] error protocol type 21
+[TM][dpa_set_protocol_type_i_act] failed
+[TM][spa_set_enty1_pktdeal_cfg]write reg failed!
+tm_port_protocol_pktdeal_set fail
+[TM][tm_port_protocol_pktdeal_set] failed
+[TM][tm_port_cvrt_protocol_pktdeal_set] error protocol type 28
+[TM][tm_port_cvrt_protocol_pktdeal_set] error protocol type 28
+[TM][tm_port_protocol_pktdeal_set] failed
+[TM][tm_pon_cvrt_protocol_pktdeal_set] error protocol type 28
+[TM][dpa_set_protocol_type_i_act] failed
+si_zx_api_pp_set_pro_action  fails!!!!
+[SW][sw_init_switch] alarm init
+Init switch module Success
+Using /kmodule/eponmac.ko
+EPONMAC init success!!!
+create eponmac_task_thread ok!
+create eponmac_pondnup_task ok!
+Using /kmodule/epondrv.ko
+zx279100_epon_Init begin
+zx279100_epon_Init ok
+Using /kmodule/optical.ko
+GN25L95          found.
+bsp_i2c_probe 0x50 success!
+===================================================================
+region code:0
+region name:
+===================================================================
+  Database default setting is [current : 0]
+Starting pid 158, console /dev/ttyS0: '/sbin/getty'
+
+Please press Enter to activate this console.
+zxic
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2128)dbTblXMLFileChk] load database failed dbTblXMLFileChkLoad entry eOpType=1
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2532)_dbXMLDmDefLoad] dbXMLCreateTblLoad tblname(MLDSNPEnable) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2532)_dbXMLDmDefLoad] dbXMLCreateTblLoad tblname(IfMLDMtoU) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2532)_dbXMLDmDefLoad] dbXMLCreateTblLoad tblname(IfMLDQrySend) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2532)_dbXMLDmDefLoad] dbXMLCreateTblLoad tblname(IfMLDSendWan) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2532)_dbXMLDmDefLoad] dbXMLCreateTblLoad tblname(UnregisMLDMode) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2532)_dbXMLDmDefLoad] dbXMLCreateTblLoad tblname(GrpMLDTimeout) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2532)_dbXMLDmDefLoad] dbXMLCreateTblLoad tblname(MLDLeaveMode) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2532)_dbXMLDmDefLoad] dbXMLCreateTblLoad tblname(MLDTblSize) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2532)_dbXMLDmDefLoad] dbXMLCreateTblLoad tblname(AutoIpEnable) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2532)_dbXMLDmDefLoad] dbXMLCreateTblLoad tblname(allowedMACAddresses) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2532)_dbXMLDmDefLoad] dbXMLCreateTblLoad tblname(ArpStolenEnable) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2392)_dbXMLCreateTbl] dbXMLCreateTblLoad tblname(WDInfo) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2392)_dbXMLCreateTbl] dbXMLCreateTblLoad tblname(TUNNEL46CFG) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2392)_dbXMLCreateTbl] dbXMLCreateTblLoad tblname(TUNNEL64CFG) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2392)_dbXMLCreateTbl] dbXMLCreateTblLoad tblname(PPPJumboCfg) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2392)_dbXMLCreateTbl] dbXMLCreateTblLoad tblname(McTunnel46) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2532)_dbXMLDmDefLoad] dbXMLCreateTblLoad tblname(ChgPwd) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2392)_dbXMLCreateTbl] dbXMLCreateTblLoad tblname(PortBinding) bTblMacroOn is false.
+11930:27:51 [DB][Warn] [dbc_mgr_file_xm(2532)_dbXMLDmDefLoad] dbXMLCreateTblLoad tblname(IsAutoShowWizard) bTblMacroOn is false.
+11930:27:51 [DB][Warn] [dbc_mgr_file_xm(2392)_dbXMLCreateTbl] dbXMLCreateTblLoad tblname(EthAcl) bTblMacroOn is false.
+11930:27:51 [DB][Warn] [dbc_mgr_file_xm(2392)_dbXMLCreateTbl] dbXMLCreateTblLoad tblname(MgtServer) bTblMacroOn is false.
+11930:27:51 [DB][Warn] [dbc_mgr_file_xm(2392)_dbXMLCreateTbl] dbXMLCreateTblLoad tblname(DHCPSBind) bTblMacroOn is false.
+11930:27:51 [DB][Warn] [dbc_mgr_file_xm(2392)_dbXMLCreateTbl] dbXMLCreateTblLoad tblname(ParamAttr) bTblMacroOn is false.
+11930:27:51 [DB][Warn] [dbc_mgr_file_xm(2128)dbTblXMLFileChk] load database failed dbTblXMLFileChkLoad entry eOpType=2
+                                      vid not found.
+11930:27:51 [DB][Error] [dbc_view_board_(708)dbDefBoardInfo] GetBoardTypeFlag failed!
+
+zxic
+11930:27:51 [DB][Warn] [dbc_person_dev_(98)dbPersonInitHVT] get parameter from Flash failed!HardwareVerTag
+11930:27:52 [DB][Warn] [dbc_person_auth(30)dbPersonInitAut] get parameter from Flash failed!Username
+11930:27:52 [DB][Warn] [dbc_person_auth(62)dbPersonInitAut] get parameter from Flash failed!Password
+11930:27:52 [DB][Warn] [dbc_person_dev_(255)dbGetOnuMode] boardType : F401
+11930:27:52 [DB][Warn] [dbc_person_dev_(273)dbGetOnuMode] getOnuMode failed, use default mode
+11930:27:52 [DB][Warn] [dbc_person_dev_(341)dbPersonInitVer] get parameter from Flash failed!VersionMode
+                        EponSetPonMac get db mac is a0-7e- 9-24-1c- 3
+
+                                                                     [eponSetMacEntry] parameter in:
+                    OpType:0 mac:
+00:00:02 [dss][Warn] [dss_lla.c(810)DssLlaMain] The Dss' lpMsg is null.
+00:00:02 [dhcp6s][Warn] [dhcp6s_main.c(1501)getHwMacByIfNam] Ioctl failed!
+00:00:02 [dhcp6s][Warn] [dhcp6s_main.c(1665)startDhcp6sInst] invalid interface
+                                                                               ########br's FDB_MAX[256]
+ADDRCONF(NETDEV_UP): br0: link is not ready
+ethdrv_dev_ioctl  ,brdev_set.port_id 0 ,brdev_set.name eth0 ,brdev_set.flag 0
+00:00:02 [U_busybox][Warn] [ifconfig.c(953)ifconfig] Ioctl failed!SIOCSIFHWADDR
+                                                                               sip alg change port ok!
+ftp alg change port ok!
+rtsp alg change port ok!
+00:00:06 [dns_mgr][Warn] [ifs_api.c(2585)GetRouteIFInfo] parameter is illegal![IGD.WD1.WCD1.WCPPP1]
+                   recv EV_NORMAL_START
+00:00:06 [dss][Warn] [dss_lla.c(810)DssLlaMain] The Dss' lpMsg is null.
+00:00:06 [prefix_mgr][Error] [prefix_mgr.c(1952)PrefixMgrInit] Init Prefix Lock error!
+00:00:06 [xpon_mgr][Warn] [ifconfig.c(953)ifconfig] Ioctl failed!SIOCSIFHWADDR
+                                                                              [sw_port_set_port_floodcontrol] not support now!
+[sw_port_set_port_floodcontrol] not support now!
+si_api_sw_port_set_port_multicastrate port:(0) direct:(0) enable:(0) rate:(1024000 kpbs) ifgMode:(1)
+si_api_sw_port_set_port_broadcastrate port:(0) direct:(0) enable:(0) rate:(1024000 kpbs) ifgMode:(1)
+si_api_sw_port_set_port_ratelimit port:(0) direct:(0) enable:(0) rate:(1024000 kpbs) ifgMode:(1)
+si_api_sw_port_set_port_ratelimit port:(0) direct:(1) enable:(0) rate:(1024000 kpbs) ifgMode:(1)
+cspd misc entry OSS_NORMAL_STATE
+                                 cspd_misc_asynmsg EV_NORMAL_START
+                                                                   module-gpio: invalid cmdid
+module-gpio: r=-1
+device eth0 entered promiscuous mode
+br0: port 1(eth0) entered forwarding state
+br0: port 1(eth0) entered forwarding state
+ADDRCONF(NETDEV_CHANGE): br0: link becomes ready
+00:00:08 [OSS_cspd][Error] [oss_sche.c(771)RunProcess] From thread[cspd_task] not Find Dest PID  Sender: [00010116], Receiver: [0001012B] Event = 0x9c20
+                                                                         <LOGID000000005>00:00:08 [KIGMPSNP][Error] [br_multicast_se(678)set_trap_unknow] port0 trap_unknow_report_en is 0!
+<LOGID000000005>00:00:08 [KIGMPSNP][Error] [br_multicast_se(705)set_multicast_t] portNum = 0, tagstripe = 0
+zxic_eoam_monitor_init...
+00:00:12 [OSS_eoam][Warn] [oss_sche.c(827)RunProcess] RunProcess process[eoampre] Event[0x1100] dwUsedTicks[508]
+00:00:13 [OSS_eoam][Warn] [oss_sche.c(827)RunProcess] RunProcess process[eoam] Event[0x1100] dwUsedTicks[542]
+00:00:13 [optical_mgr][Error] [pon_optical_mgr(232)opticalProcASyn]  ASynMsg: msg id = 0xe701
+
+zxic
+Login: root
+Password:
+Login incorrect
+zxic
+Login: admin
+Password:
+Login incorrect
+zxic
+Login: root
+Password:
+Login incorrect
+Starting pid 421, console /dev/ttyS0: '/sbin/getty'
+
+zxic
+Login: root
+Password:
+Login incorrect
+zxic
+Login: root
+Password:
+Login incorrect
+zxic
+Login: root
+Password:
+Login incorrect
+Starting pid 422, console /dev/ttyS0: '/sbin/getty'
+
+zxic
+Login: root
+Password:
+Login incorrect
+zxic
+Login:
+BOOT MODE: SPI
+ddr init
+
+U-Boot 2013.04 (Jul 21 2015 - 09:37:13)
+
+CPU:   FA626TE 266 MHz
+AHB:   133 MHz
+APB:   66 MHz
+I2C:   ready
+DRAM:  64 MiB
+MMU:   on
+ftspi020: id=c22018.c220
+ftspi020: mx25l12805d (16 MB)
+In:    serial
+Out:   serial
+Err:   serial
+FCS: speed change finished 320000
+Net:   eth0
+
+Hit 1 to upgrade softwate version
+Hit any key to stop autoboot:  0
+=> help
+?       - alias for 'help'
+base    - print or set address offset
+bdinfo  - print Board Info structure
+bootk   - boot kernel
+bootm   - boot application image from memory
+bootp   - boot image via network using BOOTP/TFTP protocol
+clk     - clock set
+cmp     - memory compare
+cp      - memory copy
+downver - upgrade software downloaded from TFTP server
+fr      - fpga read
+fw      - fpga write
+go      - start application at address 'addr'
+help    - print command description/usage
+i2c     - I2C sub-system
+loop    - infinite loop on address range
+md      - memory display
+mii     - MII utility commands
+mm      - memory modify (auto-incrementing address)
+mt      - memory test
+mw      - memory write (fill)
+nm      - memory modify (constant address)
+ping    - send ICMP ECHO_REQUEST to network host
+printenv- print environment variables
+reset   - Perform RESET of the CPU
+run     - run commands in an environment variable
+saveenv - save environment variables to persistent storage
+setenv  - set environment variables
+sf      - SPI flash sub-system
+tftp    - boot image via network using TFTP protocol
+tftpput - TFTP put command, for uploading files to a server
+version - print monitor, compiler and linker version
+watchdog- watchdog reset && disable
+xmodem  - xmodem
+=> busybox
+Unknown command 'busybox' - try 'help'
+=> sh
+Unknown command 'sh' - try 'help'
+=> run
+run - run commands in an environment variable
+
+Usage:
+run var [...]
+    - run the commands in the environment variable(s) 'var'
+=> versino
+Unknown command 'versino' - try 'help'
+=> version
+
+U-Boot 2013.04 (Jul 21 2015 - 09:37:13)
+arm-linux-uclibc-gcc (GCC) 4.1.2 2011-06-24 ZTE Embsys-TSP V2.08.20_P2
+GNU ld (GNU Binutils) 2.18
+=> book
+Unknown command 'book' - try 'help'
+=> bootk
+bootk - boot kernel
+
+Usage:
+bootk <name> - kernel name
+=> mii
+mii - MII utility commands
+
+Usage:
+mii device                     - list available devices
+mii device <devname>           - set current device
+mii info   <addr>              - display MII PHY info
+mii read   <addr> <reg>        - read  MII PHY <addr> register <reg>
+mii write  <addr> <reg> <data> - write MII PHY <addr> register <reg>
+mii dump   <addr> <reg>        - pretty-print <addr> <reg> (0-5 only)
+Addr and/or reg may be ranges, e.g. 2-7.
+=> fr
+fr - fpga read
+
+Usage:
+fr <addr> - address
+[len] - length
+=> bdinfo
+arch_number = 0x000002F6
+boot_params = 0x40000100
+DRAM bank   = 0x00000000
+-> start    = 0x40000000
+-> size     = 0x04000000
+eth0name    = eth0
+ethaddr     = 
+current eth = eth0
+ip_addr     = 192.168.1.1
+baudrate    = 115200 bps
+TLB addr    = 0x43FF0000
+relocaddr   = 0x43FC5000
+reloc off   = 0x001C5000
+irq_sp      = 0x437C4F38
+sp start    = 0x437B4F28
+=> arch_number = 0x000002F6
+Unknown command 'arch_number' - try 'help'
+=> boot_params = 0x0000
+Unknown command 'boot_params' - try 'help'
+=> -> start    = 0x eth0
+Unknown command '->' - try 'help'
+=> ethaddr     = 00_addr     = 192.168.1.1
+Unknown command 'ethaddr' - try 'help'
+=> baudrate    = 11r   = 0x43FC5000
+Unknown command 'baudrate' - try 'help'
+=> reloc off   = 0x   = 0x437B4F28
+Unknown command 'reloc' - try 'help'
+=> <INTERRUPT>
+=> <INTERRUPT>
+=>
+BOOT MODE: SPI
+ddr init
+
+U-Boot 2013.04 (Jul 21 2015 - 09:37:13)
+
+CPU:   FA626TE 266 MHz
+AHB:   133 MHz
+APB:   66 MHz
+I2C:   ready
+DRAM:  64 MiB
+MMU:   on
+ftspi020: id=c22018.c220
+ftspi020: mx25l12805d (16 MB)
+In:    serial
+Out:   serial
+Err:   serial
+FCS: speed change finished 320000
+Net:   eth0
+
+Hit 1 to upgrade softwate version
+Hit any key to stop autoboot:  0
+select=0x1
+BootImageNum=0x00000001,1
+select=0x1
+search=0x2
+read spi flash offset=0x780000, size=0x3df8a0,please waiting...down.
+## Booting kernel from Legacy Image at 41000100 ...
+   Image Name:   Linux Kernel Image
+   Image Type:   ARM Linux Kernel Image (lzma compressed)
+   Data Size:    4061010 Bytes = 3.9 MiB
+   Load Address: 40008000
+   Entry Point:  40008000
+   Verifying Checksum ... OK
+   Uncompressing Kernel Image ... OK
+----------------------
+|-->setup versioninfo tag...
+
+Starting kernel ...
+
+Linux version 2.6.32.7-EMBSYS-CGEL-4.01.10.P0.F0 (root@ubun14) (gcc version 4.1.2 2011-06-24 ZTE Embsys-TSP V2.08.20_P2) #17 Fri Sep 18 02:22:57 EDT 2020
+CPU: FA626TE [66056263] revision 3 (ARMv5TE), cr=0000397f
+CPU: VIPT aliasing data cache, VIPT aliasing instruction cache
+Machine: SFU
+Memory policy: ECC disabled, Data cache writeback
+Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 16256
+Kernel command line: console=ttyS0,115200n8 rdinit=/sbin/init
+PID hash table entries: 256 (order: -2, 1024 bytes)
+Dentry cache hash table entries: 8192 (order: 3, 32768 bytes)
+Inode-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Memory: 64MB = 64MB total
+Memory: 26568KB available (3255K code, 283K data, 11208K init, 0K highmem)
+SLUB: Genslabs=11, HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+Experimental hierarchical RCU implementation.
+Experimental hierarchical RCU init done.
+NR_IRQS:96
+ftintc030: GIC mode
+ftintc030: cpu_nr=1, spi_nr=48, sgi_nr=0, ppi_nr=0
+CPU: 133 MHz, HCLK: 133 MHz, PCLK: 66 MHz
+Console: colour dummy device 80x30
+Calibrating delay loop... 530.84 BogoMIPS (lpj=2654208)
+Mount-cache hash table entries: 512
+CPU: Testing write buffer coherency: ok
+NET: Registered protocol family 16
+11930:27:43 [Klogctl][Info] [(951)LogCtlInit] LogCtlInit begin
+11930:27:43 [Klogctl][Info] [(796)AddLogOutModule] AddLogOutModule:OutputMode=0X00000200,ptLogProcSet=c2423a98
+11930:27:43 [Klogstdio][Info] [(863)LogStdioProcInit] LogStdioProcInit
+
+LogUdpWatchProcInit
+<pdt_wdt_init>(485):creat proc files for watchdog!!!
+<pdt_wdt_init>(489):Starting Watchdog Timer...
+ftwdt010: heartbeat 2 msec, clock 66500000
+Serial: 8250/16550 driver, 2 ports, IRQ sharing disabled
+serial8250.0: ttyS0 at MMIO 0x90400000 (irq = 43) is a 16550A
+console [ttyS0] enabled
+serial8250.0: ttyS1 at MMIO 0x90500000 (irq = 44) is a 16550A
+bio: create slab <bio-0> at 0
+vgaarb: loaded
+Switching to clocksource fttmr010_clksrc
+NET: Registered protocol family 2
+IP route cache hash table entries: 1024 (order: 0, 4096 bytes)
+TCP established hash table entries: 2048 (order: 2, 16384 bytes)
+TCP bind hash table entries: 2048 (order: 1, 8192 bytes)
+TCP: Hash tables configured (established 2048 bind 2048)
+TCP: reno registered
+UDP hash table entries: 256 (order: 0, 4096 bytes)
+UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+NET: Registered protocol family 1
+i2c irq mode...
+fti2c010 fti2c010.0: i2c bus ready.
+fti2c010 fti2c010.0: speed=199101Hz
+pon init
+pp init
+pp net init ok,248/184
+switch init
+switch ram init timeout,0x1fffffff
+JFFS2 version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+msgmni has been set to 52
+io scheduler noop registered
+io scheduler cfq registered (default)
+brd: module loaded
+loop: module loaded
+nf_conntrack version 0.5.0 (416 buckets, 1664 max)
+ip_tables: (C) 2000-2006 Netfilter Core Team
+NET: Registered protocol family 10
+ip6_tables: (C) 2000-2006 Netfilter Core Team
+IPv6 over IPv4 tunneling driver
+NET: Registered protocol family 17
+Bridge firewalling registered
+Ebtables v2.0 registered
+PPP generic driver version 2.4.2
+NET: Registered protocol family 24
+systools version:v0.7.0
+ftspi020: JEDEC id c22018.c220
+ftspi020: using 'mx25l12805d': sz_sect=64KB, nr_sect=256
+ftspi020: mx25l12805d (16384 Kbytes)
+ftspi020: mtd.name = ftspi020, .size = 0x1000000 (16MiB) .erasesize = 0x00010000 (64KiB) .numeraseregions = 0
+Creating 7 MTD partitions on "ftspi020":
+0x000000000000-0x000001000000 : "whole flash"
+0x000000000000-0x000000080000 : "uboot"
+0x000000080000-0x000000780000 : "kernel0"
+0x000000780000-0x000000e80000 : "kernel1"
+0x000000e80000-0x000000e90000 : "others"
+0x000000e90000-0x000000ea0000 : "parameter tags"
+0x000000ea0000-0x000001000000 : "usercfg"
+fastforward_init start !
+fastforward_init done !
+Freeing init memory: 11208K
+CFS CPU scheduler.
+init started:  BusyBox v1.01 (2020.09.17-16:04+0000) multi-call binary
+Starting pid 28, console /dev/ttyS0: '/etc/init.d/rcS'
+Pre-initialization script ...
+  Mounting ramdisk at /var
+  Mounting /dev/mtdblock6 to /userconfig
+  Mount ok!
+Bringing up interface lo
+Bringing up interface mii0
+11930:27:45 [U_busybox][Warn] [ifconfig.c(996)ifconfig] Ioctl failed!SIOCGIFFLAGS
+Set promisc for device mii0
+11930:27:46 [U_busybox][Warn] [ifconfig.c(996)ifconfig] Ioctl failed!SIOCGIFFLAGS
+ Configuring with no IP address (i.e. for PPP)
+11930:27:46 [U_busybox][Warn] [ifconfig.c(996)ifconfig] Ioctl failed!SIOCGIFFLAGS
+Using /kmodule/bspdriver.ko
+<verinfo_module_init>(661)---->verinfo=U-Boot V6.0.1P1T5 20150721094541 0x780000 0x1 0x82 0x87
+<verinfo_module_init>(666)----><verinfo_module_init>(668)----><verinfo_module_init>(670)---->GN25L95          found.
+Using /kmodule/zx_ponreg.ko
+register fpga driver success, major=222
+Using /kmodule/tagparam_mod.ko
+Using /kmodule/tm.ko
+= TM Module SYS FS Init ended successfully =
+tm_initModule begin...
+tm_initial successed !!!
+tm_initModule end...
+Using /kmodule/netdriver.ko
+ethdriver_init....
+g_mii_dev_name[0]  sw
+g_mii_dev_name[1]  pon
+Using /kmodule/switch.ko
+Init switch module
+zy switch detected boardtype:2
+zy uni num:1
+switch config 9100 EPON SFU mode!
+tm_tpid_select_set fail, error p_port 2
+[TM][tm_tpid_select_set] set failed!p_port=2, tp_id=0, select=0
+si_zx_api_sw_global_init fails!!!!
+[TM][sbrg_set_isolate_pt_cfg]input invalid parameter!
+tm_port_isolate_set fail
+[si_api_sw_port_set_port_isolatemask] L1064 tm sdk failed!
+si_zx_api_sw_port_init fails!!!!
+[TM][tm_port_cvrt_protocol_pktdeal_set] error protocol type 11
+[TM][tm_port_cvrt_protocol_pktdeal_set] error protocol type 11
+[TM][tm_port_protocol_pktdeal_set] failed
+[TM][tm_port_cvrt_protocol_pktdeal_set] error protocol type 17
+[TM][tm_port_cvrt_protocol_pktdeal_set] error protocol type 17
+[TM][tm_port_protocol_pktdeal_set] failed
+[TM][tm_pon_cvrt_protocol_pktdeal_set] error protocol type 17
+[TM][dpa_set_protocol_type_i_act] failed
+[TM][tm_port_cvrt_protocol_pktdeal_set] error protocol type 21
+[TM][tm_port_cvrt_protocol_pktdeal_set] error protocol type 21
+[TM][tm_port_protocol_pktdeal_set] failed
+[TM][tm_pon_cvrt_protocol_pktdeal_set] error protocol type 21
+[TM][dpa_set_protocol_type_i_act] failed
+[TM][spa_set_enty1_pktdeal_cfg]write reg failed!
+tm_port_protocol_pktdeal_set fail
+[TM][tm_port_protocol_pktdeal_set] failed
+[TM][tm_port_cvrt_protocol_pktdeal_set] error protocol type 28
+[TM][tm_port_cvrt_protocol_pktdeal_set] error protocol type 28
+[TM][tm_port_protocol_pktdeal_set] failed
+[TM][tm_pon_cvrt_protocol_pktdeal_set] error protocol type 28
+[TM][dpa_set_protocol_type_i_act] failed
+si_zx_api_pp_set_pro_action  fails!!!!
+[SW][sw_init_switch] alarm init
+Init switch module Success
+Using /kmodule/eponmac.ko
+EPONMAC init success!!!
+create eponmac_task_thread ok!
+create eponmac_pondnup_task ok!
+Using /kmodule/epondrv.ko
+zx279100_epon_Init begin
+zx279100_epon_Init ok
+Using /kmodule/optical.ko
+GN25L95          found.
+bsp_i2c_probe 0x50 success!
+===================================================================
+region code:0
+region name:
+===================================================================
+  Database default setting is [current : 0]
+Starting pid 158, console /dev/ttyS0: '/sbin/getty'
+
+Please press Enter to activate this console.
+zxic
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2128)dbTblXMLFileChk] load database failed dbTblXMLFileChkLoad entry eOpType=1
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2532)_dbXMLDmDefLoad] dbXMLCreateTblLoad tblname(MLDSNPEnable) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2532)_dbXMLDmDefLoad] dbXMLCreateTblLoad tblname(IfMLDMtoU) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2532)_dbXMLDmDefLoad] dbXMLCreateTblLoad tblname(IfMLDQrySend) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2532)_dbXMLDmDefLoad] dbXMLCreateTblLoad tblname(IfMLDSendWan) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2532)_dbXMLDmDefLoad] dbXMLCreateTblLoad tblname(UnregisMLDMode) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2532)_dbXMLDmDefLoad] dbXMLCreateTblLoad tblname(GrpMLDTimeout) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2532)_dbXMLDmDefLoad] dbXMLCreateTblLoad tblname(MLDLeaveMode) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2532)_dbXMLDmDefLoad] dbXMLCreateTblLoad tblname(MLDTblSize) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2532)_dbXMLDmDefLoad] dbXMLCreateTblLoad tblname(AutoIpEnable) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2532)_dbXMLDmDefLoad] dbXMLCreateTblLoad tblname(allowedMACAddresses) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2532)_dbXMLDmDefLoad] dbXMLCreateTblLoad tblname(ArpStolenEnable) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2392)_dbXMLCreateTbl] dbXMLCreateTblLoad tblname(WDInfo) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2392)_dbXMLCreateTbl] dbXMLCreateTblLoad tblname(TUNNEL46CFG) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2392)_dbXMLCreateTbl] dbXMLCreateTblLoad tblname(TUNNEL64CFG) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2392)_dbXMLCreateTbl] dbXMLCreateTblLoad tblname(PPPJumboCfg) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2392)_dbXMLCreateTbl] dbXMLCreateTblLoad tblname(McTunnel46) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2532)_dbXMLDmDefLoad] dbXMLCreateTblLoad tblname(ChgPwd) bTblMacroOn is false.
+11930:27:50 [DB][Warn] [dbc_mgr_file_xm(2392)_dbXMLCreateTbl] dbXMLCreateTblLoad tblname(PortBinding) bTblMacroOn is false.
+11930:27:51 [DB][Warn] [dbc_mgr_file_xm(2532)_dbXMLDmDefLoad] dbXMLCreateTblLoad tblname(IsAutoShowWizard) bTblMacroOn is false.
+11930:27:51 [DB][Warn] [dbc_mgr_file_xm(2392)_dbXMLCreateTbl] dbXMLCreateTblLoad tblname(EthAcl) bTblMacroOn is false.
+11930:27:51 [DB][Warn] [dbc_mgr_file_xm(2392)_dbXMLCreateTbl] dbXMLCreateTblLoad tblname(MgtServer) bTblMacroOn is false.
+11930:27:51 [DB][Warn] [dbc_mgr_file_xm(2392)_dbXMLCreateTbl] dbXMLCreateTblLoad tblname(DHCPSBind) bTblMacroOn is false.
+11930:27:51 [DB][Warn] [dbc_mgr_file_xm(2392)_dbXMLCreateTbl] dbXMLCreateTblLoad tblname(ParamAttr) bTblMacroOn is false.
+11930:27:51 [DB][Warn] [dbc_mgr_file_xm(2128)dbTblXMLFileChk] load database failed dbTblXMLFileChkLoad entry eOpType=2
+                                      vid not found.
+11930:27:51 [DB][Error] [dbc_view_board_(708)dbDefBoardInfo] GetBoardTypeFlag failed!
+11930:27:52 [DB][Warn] [dbc_person_dev_(98)dbPersonInitHVT] get parameter from Flash failed!HardwareVerTag
+11930:27:52 [DB][Warn] [dbc_person_auth(30)dbPersonInitAut] get parameter from Flash failed!Username
+11930:27:52 [DB][Warn] [dbc_person_auth(62)dbPersonInitAut] get parameter from Flash failed!Password
+11930:27:52 [DB][Warn] [dbc_person_dev_(255)dbGetOnuMode] boardType : F401
+11930:27:52 [DB][Warn] [dbc_person_dev_(273)dbGetOnuMode] getOnuMode failed, use default mode
+11930:27:52 [DB][Warn] [dbc_person_dev_(341)dbPersonInitVer] get parameter from Flash failed!VersionMode
+                        EponSetPonMac get db mac is a0-7e- 9-24-1c- 3
+
+                                                                     [eponSetMacEntry] parameter in:
+                    OpType:0 mac:
+00:00:02 [dss][Warn] [dss_lla.c(810)DssLlaMain] The Dss' lpMsg is null.
+00:00:02 [dhcp6s][Warn] [dhcp6s_main.c(1501)getHwMacByIfNam] Ioctl failed!
+00:00:02 [dhcp6s][Warn] [dhcp6s_main.c(1665)startDhcp6sInst] invalid interface
+                                                                               ########br's FDB_MAX[256]
+ADDRCONF(NETDEV_UP): br0: link is not ready
+ethdrv_dev_ioctl  ,brdev_set.port_id 0 ,brdev_set.name eth0 ,brdev_set.flag 0
+00:00:02 [U_busybox][Warn] [ifconfig.c(953)ifconfig] Ioctl failed!SIOCSIFHWADDR
+                                                                               sip alg change port ok!
+ftp alg change port ok!
+rtsp alg change port ok!
+00:00:06 [dns_mgr][Warn] [ifs_api.c(2585)GetRouteIFInfo] parameter is illegal![IGD.WD1.WCD1.WCPPP1]
+                   recv EV_NORMAL_START
+00:00:06 [dss][Warn] [dss_lla.c(810)DssLlaMain] The Dss' lpMsg is null.
+00:00:06 [prefix_mgr][Error] [prefix_mgr.c(1952)PrefixMgrInit] Init Prefix Lock error!
+00:00:06 [xpon_mgr][Warn] [ifconfig.c(953)ifconfig] Ioctl failed!SIOCSIFHWADDR
+                                                                              [sw_port_set_port_floodcontrol] not support now!
+[sw_port_set_port_floodcontrol] not support now!
+si_api_sw_port_set_port_multicastrate port:(0) direct:(0) enable:(0) rate:(1024000 kpbs) ifgMode:(1)
+si_api_sw_port_set_port_broadcastrate port:(0) direct:(0) enable:(0) rate:(1024000 kpbs) ifgMode:(1)
+si_api_sw_port_set_port_ratelimit port:(0) direct:(0) enable:(0) rate:(1024000 kpbs) ifgMode:(1)
+si_api_sw_port_set_port_ratelimit port:(0) direct:(1) enable:(0) rate:(1024000 kpbs) ifgMode:(1)
+cspd misc entry OSS_NORMAL_STATE
+                                 cspd_misc_asynmsg EV_NORMAL_START
+                                                                   module-gpio: invalid cmdid
+module-gpio: r=-1
+device eth0 entered promiscuous mode
+br0: port 1(eth0) entered forwarding state
+br0: port 1(eth0) entered forwarding state
+ADDRCONF(NETDEV_CHANGE): br0: link becomes ready
+00:00:08 [OSS_cspd][Error] [oss_sche.c(771)RunProcess] From thread[cspd_task] not Find Dest PID  Sender: [00010116], Receiver: [0001012B] Event = 0x9c20
+                                                                         <LOGID000000005>00:00:08 [KIGMPSNP][Error] [br_multicast_se(678)set_trap_unknow] port0 trap_unknow_report_en is 0!
+<LOGID000000005>00:00:08 [KIGMPSNP][Error] [br_multicast_se(705)set_multicast_t] portNum = 0, tagstripe = 0

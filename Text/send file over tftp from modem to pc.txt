@@ -1,0 +1,4 @@
+run http://tftpd32.jounin.net/tftpd32_download.html at pc
+
+at device:
+tftp -p -r filetoSend 192.168.1.232   (ip is of pc)

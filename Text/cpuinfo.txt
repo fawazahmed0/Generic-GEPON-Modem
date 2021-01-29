@@ -1,0 +1,20 @@
+cat /proc/cpuinfo
+
+
+Processor       : FA626TE rev 3 (v5l)
+BogoMIPS        : 530.84
+Features        : swp half
+CPU implementer : 0x66
+CPU architecture: 5TE
+CPU variant     : 0x0
+CPU part        : 0x626
+CPU revision    : 3
+
+Hardware        : SFU
+Revision        : 0000
+Serial          : 0000000000000000
+
+
+
+cat /proc/version
+Linux version 2.6.32.7-EMBSYS-CGEL-4.01.10.P0.F0 (root@ubun14) (gcc version 4.1.2 2011-06-24 ZTE Embsys-TSP V2.08.20_P2) #17 Fri Sep 18 02:22:57 EDT 2020
